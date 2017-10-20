@@ -74,6 +74,13 @@ public class DijkstraVsBFS {
         StdOut.printf("Farthest vertex is %d dist %d\n", t1, dist);
     }
 
+    /* Use algs4-data/largeEWD.txt from https://algs4.cs.princeton.edu/code/algs4-data.zip
+    *  and 4 as vertex.
+    *
+    *  java Dijkstra algs4-data/largeEWD.txt 4
+    *
+    *  */
+
     public static void main(String[] args) {
         StdOut.println("Start load data");
         EdgeWeightedDigraph G = loadFromEdgeWeightedData(args[0]);
