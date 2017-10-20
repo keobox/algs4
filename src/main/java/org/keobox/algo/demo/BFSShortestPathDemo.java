@@ -1,11 +1,11 @@
 package org.keobox.algo.demo;
 
+import java.util.NoSuchElementException;
+
 import edu.princeton.cs.algs4.BreadthFirstDirectedPaths;
 import edu.princeton.cs.algs4.Digraph;
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.StdOut;
-
-import java.util.NoSuchElementException;
 
 public class BFSShortestPathDemo {
 
@@ -22,7 +22,7 @@ public class BFSShortestPathDemo {
                 int v = in.readInt();
                 int w = in.readInt();
                 // consume weight but not use it.
-                double weight = in.readDouble();
+                in.readDouble();
                 G.addEdge(v, w);
             }
         } catch (NoSuchElementException e) {
@@ -31,12 +31,12 @@ public class BFSShortestPathDemo {
         return G;
     }
 
-    /* Use algs4-data/largeEWD.txt from https://algs4.cs.princeton.edu/code/algs4-data.zip
-    *  and 4 as vertex.
-    *
-    *  java Dijkstra algs4-data/largeEWD.txt 4
-    *
-    *  */
+	/* Use algs4-data/largeEWD.txt from https://algs4.cs.princeton.edu/code/algs4-data.zip
+     *  and 4 as vertex.
+	 *
+	 *  java Dijkstra algs4-data/largeEWD.txt 4
+	 *
+	 *  */
 
     public static void main(String[] args) {
         StdOut.println("Start load data");

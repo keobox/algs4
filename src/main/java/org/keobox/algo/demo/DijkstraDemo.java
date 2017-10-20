@@ -1,8 +1,12 @@
 package org.keobox.algo.demo;
 
-import edu.princeton.cs.algs4.*;
-
 import java.util.NoSuchElementException;
+
+import edu.princeton.cs.algs4.DijkstraSP;
+import edu.princeton.cs.algs4.DirectedEdge;
+import edu.princeton.cs.algs4.EdgeWeightedDigraph;
+import edu.princeton.cs.algs4.In;
+import edu.princeton.cs.algs4.StdOut;
 
 public class DijkstraDemo {
 

@@ -1,8 +1,14 @@
 package org.keobox.algo.demo;
 
-import edu.princeton.cs.algs4.*;
-
 import java.util.NoSuchElementException;
+
+import edu.princeton.cs.algs4.BreadthFirstDirectedPaths;
+import edu.princeton.cs.algs4.Digraph;
+import edu.princeton.cs.algs4.DijkstraSP;
+import edu.princeton.cs.algs4.DirectedEdge;
+import edu.princeton.cs.algs4.EdgeWeightedDigraph;
+import edu.princeton.cs.algs4.In;
+import edu.princeton.cs.algs4.StdOut;
 
 public class DijkstraVsBFS {
 
@@ -19,7 +25,7 @@ public class DijkstraVsBFS {
                 int v = in.readInt();
                 int w = in.readInt();
                 // consume weight but not use it.
-                double weight = in.readDouble();
+                in.readDouble();
                 G.addEdge(new DirectedEdge(v, w, 1.0));
             }
         } catch (NoSuchElementException e) {
@@ -38,9 +44,9 @@ public class DijkstraVsBFS {
 
     public static void dijkstra(EdgeWeightedDigraph G, int s) {
         StdOut.println("Start compute Dijkstra shortest paths");
-        long startTime = System.nanoTime();
+        long startTime = System.currentTimeMillis();
         DijkstraSP sp = new DijkstraSP(G, s);
-        StdOut.printf("Computing elapsed time: %d ms\n", (System.nanoTime() - startTime) / 1000000);
+        StdOut.printf("Computing elapsed time: %d ms\n", (System.currentTimeMillis() - startTime));
         StdOut.printf("Find farthest vertex from %d\n", s);
         int t1 = s;
         double dist = 0.0;
@@ -57,9 +63,9 @@ public class DijkstraVsBFS {
 
     public static void bfs(Digraph G, int s) {
         StdOut.println("Start compute BFS shortest paths");
-        long startTime = System.nanoTime();
+        long startTime = System.currentTimeMillis();
         BreadthFirstDirectedPaths bfs = new BreadthFirstDirectedPaths(G, s);
-        StdOut.printf("Computing elapsed time: %d ms\n", (System.nanoTime() - startTime) / 1000000);
+        StdOut.printf("Computing elapsed time: %d ms\n", (System.currentTimeMillis() - startTime));
         StdOut.printf("Find farthest vertex from %d\n", s);
         int t1 = s;
         int dist = 0;
