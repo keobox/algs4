@@ -57,7 +57,7 @@ import java.util.Random;
  *  array or subarray.
  *  <p>
  *  For additional documentation,
- *  see <a href="http://introcs.cs.princeton.edu/22library">Section 2.2</a> of
+ *  see <a href="https://introcs.cs.princeton.edu/22library">Section 2.2</a> of
  *  <i>Computer Science: An Interdisciplinary Approach</i>
  *  by Robert Sedgewick and Kevin Wayne.
  *
@@ -550,7 +550,7 @@ public final class StdRandom {
     }
 
     /**
-     * Returns a uniformly random permutation of <em>n</em> elements
+     * Returns a uniformly random permutation of <em>n</em> elements.
      *
      * @param  n number of elements
      * @throws IllegalArgumentException if {@code n} is negative
@@ -567,7 +567,7 @@ public final class StdRandom {
     }
 
     /**
-     * Returns a uniformly random permutation of <em>k</em> of <em>n</em> elements
+     * Returns a uniformly random permutation of <em>k</em> of <em>n</em> elements.
      *
      * @param  n number of elements
      * @param  k number of elements to select
@@ -608,7 +608,7 @@ public final class StdRandom {
     }
 
     /**
-     * Unit test.
+     * Unit tests the methods in this class.
      *
      * @param args the command-line arguments
      */
