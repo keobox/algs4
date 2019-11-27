@@ -33,7 +33,7 @@ import java.awt.Color;
  *  @author Kevin Wayne
  */
 public class CollisionSystem {
-    private final static double HZ = 0.5;    // number of redraw events per clock tick
+    private static final double HZ = 0.5;    // number of redraw events per clock tick
 
     private MinPQ<Event> pq;          // the priority queue
     private double t  = 0.0;          // simulation clock time
@@ -176,11 +176,7 @@ public class CollisionSystem {
      */
     public static void main(String[] args) {
 
-        StdDraw.setCanvasSize(800, 800);
-
-        // remove the border
-        // StdDraw.setXscale(1.0/22.0, 21.0/22.0);
-        // StdDraw.setYscale(1.0/22.0, 21.0/22.0);
+        StdDraw.setCanvasSize(600, 600);
 
         // enable double buffering
         StdDraw.enableDoubleBuffering();
@@ -223,7 +219,7 @@ public class CollisionSystem {
 }
 
 /******************************************************************************
- *  Copyright 2002-2016, Robert Sedgewick and Kevin Wayne.
+ *  Copyright 2002-2019, Robert Sedgewick and Kevin Wayne.
  *
  *  This file is part of algs4.jar, which accompanies the textbook
  *

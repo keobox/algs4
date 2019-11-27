@@ -68,7 +68,7 @@ public class Particle {
         ry     = StdRandom.uniform(0.0, 1.0);
         vx     = StdRandom.uniform(-0.005, 0.005);
         vy     = StdRandom.uniform(-0.005, 0.005);
-        radius = 0.01;
+        radius = 0.02;
         mass   = 0.5;
         color  = Color.BLACK;
     }
@@ -124,6 +124,7 @@ public class Particle {
         double dvdr = dx*dvx + dy*dvy;
         if (dvdr > 0) return INFINITY;
         double dvdv = dvx*dvx + dvy*dvy;
+        if (dvdv == 0) return INFINITY;
         double drdr = dx*dx + dy*dy;
         double sigma = this.radius + that.radius;
         double d = (dvdr*dvdr) - dvdv * (drdr - sigma*sigma);
@@ -228,7 +229,7 @@ public class Particle {
 }
 
 /******************************************************************************
- *  Copyright 2002-2016, Robert Sedgewick and Kevin Wayne.
+ *  Copyright 2002-2019, Robert Sedgewick and Kevin Wayne.
  *
  *  This file is part of algs4.jar, which accompanies the textbook
  *

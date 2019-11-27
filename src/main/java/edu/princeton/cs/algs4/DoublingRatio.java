@@ -12,7 +12,6 @@
  *     4000     4.5   8.0
  *     8000    35.7   8.0
  *     4000     3.9   6.6
-
  *  ...
  *
  ******************************************************************************/
@@ -71,7 +70,7 @@ public class DoublingRatio {
 
 
 /******************************************************************************
- *  Copyright 2002-2016, Robert Sedgewick and Kevin Wayne.
+ *  Copyright 2002-2019, Robert Sedgewick and Kevin Wayne.
  *
  *  This file is part of algs4.jar, which accompanies the textbook
  *

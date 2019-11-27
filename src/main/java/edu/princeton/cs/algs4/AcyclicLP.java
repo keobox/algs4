@@ -28,11 +28,12 @@ package edu.princeton.cs.algs4;
  *  acyclic graphs (DAGs). The edge weights can be positive, negative, or zero.
  *  <p>
  *  This implementation uses a topological-sort based algorithm.
- *  The constructor takes time proportional to <em>V</em> + <em>E</em>,
- *  where <em>V</em> is the number of vertices and <em>E</em> is the number of edges.
- *  Each call to {@code distTo(int)} and {@code hasPathTo(int)} takes constant time;
- *  each call to {@code pathTo(int)} takes time proportional to the number of
- *  edges in the shortest path returned.
+ *  The constructor takes &Theta;(<em>V</em> + <em>E</em>) time in the
+ *  worst case, where <em>V</em> is the number of vertices and
+ *  <em>E</em> is the number of edges.
+ *  Each instance method takes &Theta;(1) time.
+ *  It uses &Theta;(<em>V</em>) extra space (not including the
+ *  edge-weighted digraph).
  *  <p>
  *  For additional documentation,   
  *  see <a href="https://algs4.cs.princeton.edu/44sp">Section 4.4</a> of   
@@ -63,7 +64,7 @@ public class AcyclicLP {
             distTo[v] = Double.NEGATIVE_INFINITY;
         distTo[s] = 0.0;
 
-        // relax vertices in toplogical order
+        // relax vertices in topological order
         Topological topological = new Topological(G);
         if (!topological.hasOrder())
             throw new IllegalArgumentException("Digraph is not acyclic.");
@@ -158,7 +159,7 @@ public class AcyclicLP {
 }
 
 /******************************************************************************
- *  Copyright 2002-2016, Robert Sedgewick and Kevin Wayne.
+ *  Copyright 2002-2019, Robert Sedgewick and Kevin Wayne.
  *
  *  This file is part of algs4.jar, which accompanies the textbook
  *

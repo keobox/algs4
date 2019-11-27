@@ -153,7 +153,7 @@ public class GlobalMincut {
      */
     private void makeCut(int t, UF uf) {
         for (int v = 0; v < cut.length; v++) {
-            cut[v] = uf.connected(v, t);
+            cut[v] = (uf.find(v) == uf.find(t));
         }
     }
 
@@ -298,7 +298,7 @@ public class GlobalMincut {
 }
 
 /******************************************************************************
- *  Copyright 2002-2016, Robert Sedgewick and Kevin Wayne.
+ *  Copyright 2002-2019, Robert Sedgewick and Kevin Wayne.
  *
  *  This file is part of algs4.jar, which accompanies the textbook
  *

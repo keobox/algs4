@@ -65,7 +65,7 @@ public class GrahamScan {
             if (points[i] == null)
                 throw new IllegalArgumentException("points[" + i + "] is null");
             a[i] = points[i];
-         }
+        }
 
         // preprocess so that a[0] has lowest y-coordinate; break ties by x-coordinate
         // a[0] is an extreme point of the convex hull
@@ -158,7 +158,7 @@ public class GrahamScan {
 }
 
 /******************************************************************************
- *  Copyright 2002-2016, Robert Sedgewick and Kevin Wayne.
+ *  Copyright 2002-2019, Robert Sedgewick and Kevin Wayne.
  *
  *  This file is part of algs4.jar, which accompanies the textbook
  *

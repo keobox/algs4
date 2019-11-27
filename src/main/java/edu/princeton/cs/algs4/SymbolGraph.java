@@ -92,9 +92,8 @@ public class SymbolGraph {
                     st.put(a[i], st.size());
             }
         }
-        StdOut.println("Done reading " + filename);
 
-        // inverted index to get string keys in an aray
+        // inverted index to get string keys in an array
         keys = new String[st.size()];
         for (String name : st.keys()) {
             keys[st.get(name)] = name;
@@ -190,7 +189,7 @@ public class SymbolGraph {
 
     // throw an IllegalArgumentException unless {@code 0 <= v < V}
     private void validateVertex(int v) {
-         int V = graph.V();
+        int V = graph.V();
         if (v < 0 || v >= V)
             throw new IllegalArgumentException("vertex " + v + " is not between 0 and " + (V-1));
     }
@@ -222,7 +221,7 @@ public class SymbolGraph {
 }
 
 /******************************************************************************
- *  Copyright 2002-2016, Robert Sedgewick and Kevin Wayne.
+ *  Copyright 2002-2019, Robert Sedgewick and Kevin Wayne.
  *
  *  This file is part of algs4.jar, which accompanies the textbook
  *

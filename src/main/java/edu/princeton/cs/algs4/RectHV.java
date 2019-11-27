@@ -50,7 +50,7 @@ public final class RectHV {
         if (Double.isNaN(ymin) || Double.isNaN(ymax)) {
             throw new IllegalArgumentException("y-coordinate is NaN: " + toString());
         }
-	if (xmax < xmin) {
+        if (xmax < xmin) {
             throw new IllegalArgumentException("xmax < xmin: " + toString());
         }
         if (ymax < ymin) {
@@ -224,7 +224,7 @@ public final class RectHV {
 }
 
 /******************************************************************************
- *  Copyright 2002-2016, Robert Sedgewick and Kevin Wayne.
+ *  Copyright 2002-2019, Robert Sedgewick and Kevin Wayne.
  *
  *  This file is part of algs4.jar, which accompanies the textbook
  *

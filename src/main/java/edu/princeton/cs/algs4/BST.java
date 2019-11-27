@@ -339,10 +339,11 @@ public class BST<Key extends Comparable<Key>, Value> {
     } 
 
     /**
-     * Return the kth smallest key in the symbol table.
+     * Return the key in the symbol table whose rank is {@code k}.
+     * This is the (k+1)st smallest key in the symbol table.
      *
      * @param  k the order statistic
-     * @return the {@code k}th smallest key in the symbol table
+     * @return the key in the symbol table of rank {@code k}
      * @throws IllegalArgumentException unless {@code k} is between 0 and
      *        <em>n</em>–1
      */
@@ -529,6 +530,8 @@ public class BST<Key extends Comparable<Key>, Value> {
         BST<String, Integer> st = new BST<String, Integer>();
         for (int i = 0; !StdIn.isEmpty(); i++) {
             String key = StdIn.readString();
+            if ((st.size() > 1) && (st.floor(key) != st.floor2(key)))
+                throw new RuntimeException("floor() function inconsistent");
             st.put(key, i);
         }
 
@@ -543,7 +546,7 @@ public class BST<Key extends Comparable<Key>, Value> {
 }
 
 /******************************************************************************
- *  Copyright 2002-2016, Robert Sedgewick and Kevin Wayne.
+ *  Copyright 2002-2019, Robert Sedgewick and Kevin Wayne.
  *
  *  This file is part of algs4.jar, which accompanies the textbook
  *

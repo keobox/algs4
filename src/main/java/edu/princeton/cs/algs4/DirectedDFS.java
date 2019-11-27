@@ -32,6 +32,8 @@ package edu.princeton.cs.algs4;
  *  The constructor takes time proportional to <em>V</em> + <em>E</em>
  *  (in the worst case),
  *  where <em>V</em> is the number of vertices and <em>E</em> is the number of edges.
+ *  Each instance method takes &Theta;(1) time.
+ *  It uses &Theta;(<em>V</em>) extra space (not including the digraph).
  *  <p>
  *  For additional documentation,
  *  see <a href="https://algs4.cs.princeton.edu/42digraph">Section 4.2</a> of
@@ -41,9 +43,8 @@ package edu.princeton.cs.algs4;
  *  @author Kevin Wayne
  */
 public class DirectedDFS {
-    private boolean[] marked;  // marked[v] = true if v is reachable
-                               // from source (or sources)
-    private int count;         // number of vertices reachable from s
+    private boolean[] marked;  // marked[v] = true iff v is reachable from source(s)
+    private int count;         // number of vertices reachable from source(s)
 
     /**
      * Computes the vertices in digraph {@code G} that are
@@ -156,7 +157,7 @@ public class DirectedDFS {
 }
 
 /******************************************************************************
- *  Copyright 2002-2016, Robert Sedgewick and Kevin Wayne.
+ *  Copyright 2002-2019, Robert Sedgewick and Kevin Wayne.
  *
  *  This file is part of algs4.jar, which accompanies the textbook
  *

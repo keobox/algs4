@@ -5,7 +5,7 @@
  *  
  *  This library is for reading binary data from an input stream.
  *
- *  % java BinaryIn https://introcs.cs.princeton.edu/cover.jpg output.jpg
+ *  % java BinaryIn https://introcs.cs.princeton.edu/java/cover.png output.png
  *
  ******************************************************************************/
 
@@ -379,7 +379,7 @@ public final class BinaryIn {
 }
 
 /******************************************************************************
- *  Copyright 2002-2016, Robert Sedgewick and Kevin Wayne.
+ *  Copyright 2002-2019, Robert Sedgewick and Kevin Wayne.
  *
  *  This file is part of algs4.jar, which accompanies the textbook
  *
