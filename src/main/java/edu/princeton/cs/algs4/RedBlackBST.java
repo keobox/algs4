@@ -59,16 +59,18 @@ import java.util.NoSuchElementException;
  *  &Theta;(log <em>n</em>) time in the worst case, where <em>n</em> is the
  *  number of key-value pairs in the symbol table.
  *  The <em>size</em>, and <em>is-empty</em> operations take &Theta;(1) time.
- *  The <em>keys</em> method takes time proportional to the number of keys
- *  returned by the iterator.
+ *  The <em>keys</em> methods take
+ *  <em>O</em>(log <em>n</em> + <em>m</em>) time, where <em>m</em> is
+ *  the number of keys returned by the iterator.
  *  Construction takes &Theta;(1) time.
  *  <p>
+ *  For alternative implementations of the symbol table API, see {@link ST},
+ *  {@link BinarySearchST}, {@link SequentialSearchST}, {@link BST},
+ *  {@link SeparateChainingHashST}, {@link LinearProbingHashST}, and
+ *  {@link AVLTreeST}.
  *  For additional documentation, see
  *  <a href="https://algs4.cs.princeton.edu/33balanced">Section 3.3</a> of
  *  <i>Algorithms, 4th Edition</i> by Robert Sedgewick and Kevin Wayne.
- *  For other implementations of the same API, see {@link ST}, {@link BinarySearchST},
- *  {@link SequentialSearchST}, {@link BST},
- *  {@link SeparateChainingHashST}, {@link LinearProbingHashST}, and {@link AVLTreeST}.
  *
  *  @author Robert Sedgewick
  *  @author Kevin Wayne
@@ -480,7 +482,7 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
         if (key == null) throw new IllegalArgumentException("argument to floor() is null");
         if (isEmpty()) throw new NoSuchElementException("calls floor() with empty symbol table");
         Node x = floor(root, key);
-        if (x == null) return null;
+        if (x == null) throw new NoSuchElementException("argument to floor() is too small");
         else           return x.key;
     }    
 
@@ -506,7 +508,7 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
         if (key == null) throw new IllegalArgumentException("argument to ceiling() is null");
         if (isEmpty()) throw new NoSuchElementException("calls ceiling() with empty symbol table");
         Node x = ceiling(root, key);
-        if (x == null) return null;
+        if (x == null) throw new NoSuchElementException("argument to ceiling() is too small");
         else           return x.key;  
     }
 
@@ -721,6 +723,7 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
             String key = StdIn.readString();
             st.put(key, i);
         }
+        StdOut.println();
         for (String s : st.keys())
             StdOut.println(s + " " + st.get(s));
         StdOut.println();
@@ -728,7 +731,7 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
 }
 
 /******************************************************************************
- *  Copyright 2002-2019, Robert Sedgewick and Kevin Wayne.
+ *  Copyright 2002-2020, Robert Sedgewick and Kevin Wayne.
  *
  *  This file is part of algs4.jar, which accompanies the textbook
  *
