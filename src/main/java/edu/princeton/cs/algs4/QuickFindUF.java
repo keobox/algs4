@@ -19,11 +19,11 @@ package edu.princeton.cs.algs4;
  *  along with a <em>count</em> operation that returns the total number
  *  of sets.
  *  <p>
- *  The union-find data type models a collection of sets containing
+ *  The union–find data type models a collection of sets containing
  *  <em>n</em> elements, with each element in exactly one set.
  *  The elements are named 0 through <em>n</em>–1.
  *  Initially, there are <em>n</em> sets, with each element in its
- *  own set. The <em>cannonical elemement</em> of a set
+ *  own set. The <em>canonical element</em> of a set
  *  (also known as the <em>root</em>, <em>identifier</em>,
  *  <em>leader</em>, or <em>set representative</em>)
  *  is one distinguished element in the set. Here is a summary of
@@ -152,7 +152,7 @@ public class QuickFindUF {
     }
 
     /**
-     * Reads in a an integer {@code n} and a sequence of pairs of integers
+     * Reads an integer {@code n} and a sequence of pairs of integers
      * (between {@code 0} and {@code n-1}) from standard input, where each integer
      * in the pair represents some element;
      * if the elements are in different sets, merge the two sets

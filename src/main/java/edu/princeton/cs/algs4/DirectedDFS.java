@@ -64,6 +64,7 @@ public class DirectedDFS {
      * connected to any of the source vertices {@code sources}.
      * @param G the graph
      * @param sources the source vertices
+     * @throws IllegalArgumentException if {@code sources} is {@code null}
      * @throws IllegalArgumentException unless {@code 0 <= s < V}
      *         for each vertex {@code s} in {@code sources}
      */
@@ -117,11 +118,11 @@ public class DirectedDFS {
         if (vertices == null) {
             throw new IllegalArgumentException("argument is null");
         }
-        int V = marked.length;
-        for (int v : vertices) {
-            if (v < 0 || v >= V) {
-                throw new IllegalArgumentException("vertex " + v + " is not between 0 and " + (V-1));
+        for (Integer v : vertices) {
+            if (v == null) {
+                throw new IllegalArgumentException("vertex is null");
             }
+            validateVertex(v);
         }
     }
 
